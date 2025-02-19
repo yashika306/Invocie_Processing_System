@@ -1,5 +1,6 @@
-import React from 'react';
+import React , { useState} from 'react';
 import { Box, Button, styled, TextField } from '@mui/material';
+import { saveInvoice } from '../services/api.';
 
 const CenteredWrapper = styled(Box)({
     display: 'flex',
@@ -39,6 +40,20 @@ const StyledButton = styled(Button)({
 });
 
 export default function AddInvoice() {
+  const defaultObj  ={
+      vendor :'',
+      product: '',
+      amount: 0,
+      date: '',
+      acction: 'pending'
+  }
+  const [invoice , setInvoice] = useState(defaultObj);
+  const onValueChange = (e) =>{
+      setInvoice({ ...invoice, [e.target.name ]:e.target.value});
+  }
+  const addNewInvoice =  async () => {
+     await saveInvoice({...invoice, amount : Number(invoice['amount']) });
+  }
   return (
     <CenteredWrapper>
         <StyledBox>
@@ -46,24 +61,34 @@ export default function AddInvoice() {
                 id="vendor-name" 
                 variant="standard" 
                 placeholder="Enter Vendor Name" 
+                onChange={(e) => onValueChange(e)}
+                name ="vendor"
             />
             <StyledTextField 
                 id="product-name" 
                 variant="standard" 
                 placeholder="Enter Product Name" 
+                onChange={(e) => onValueChange(e)}
+                name ="product"
             />
             <StyledTextField 
                 id="price" 
                 variant="standard" 
                 type="number" 
                 placeholder="Enter Price (in Rs)" 
+                onChange={(e) => onValueChange(e)}
+                name ="amount"
             />
             <StyledTextField 
                 id="invoice-date" 
                 variant="standard" 
                 type="date" 
+                onChange={(e) => onValueChange(e)}
+                name ="date"
             />
-            <StyledButton>
+            <StyledButton 
+              onClick={() => addNewInvoice()}
+            >
                 Add Invoice
             </StyledButton>
         </StyledBox>
