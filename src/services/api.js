@@ -24,7 +24,7 @@ export const getInvoices = async () => {
 
 export const deleteInvoice = async (id) => {
     try {
-        await axios.delete(`${API_URL}/api/invoice/${id}`);
+        await axios.delete(`${API_URL}/api/deleteinvoice/${id}`);
     } catch (error) {
         console.error("❌ Error deleting invoice:", error);
     }
