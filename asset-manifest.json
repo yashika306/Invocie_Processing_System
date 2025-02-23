@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Invocie_Processing_System/static/css/main.e6c13ad2.css",
+    "main.js": "/Invocie_Processing_System/static/js/main.c039f21d.js",
+    "static/js/488.5dc00adb.chunk.js": "/Invocie_Processing_System/static/js/488.5dc00adb.chunk.js",
+    "index.html": "/Invocie_Processing_System/index.html",
+    "main.e6c13ad2.css.map": "/Invocie_Processing_System/static/css/main.e6c13ad2.css.map",
+    "main.c039f21d.js.map": "/Invocie_Processing_System/static/js/main.c039f21d.js.map",
+    "488.5dc00adb.chunk.js.map": "/Invocie_Processing_System/static/js/488.5dc00adb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.c039f21d.js"
+  ]
+}
